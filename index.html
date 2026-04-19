@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject = t;
+  var ttq = w[t] = w[t] || [];
+  ttq.methods = ["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+  ttq.setAndDefer = function(t, e) {
+    t[e] = function() {
+      t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+    };
+  };
+  for (var i = 0; i < ttq.methods.length; i++) {
+    ttq.setAndDefer(ttq, ttq.methods[i]);
+  }
+  ttq.instance = function(t) {
+    var e = ttq._i[t] || [];
+    for (var n = 0; n < ttq.methods.length; n++) {
+      ttq.setAndDefer(e, ttq.methods[n]);
+    }
+    return e;
+  };
+  ttq.load = function(e, n) {
+    var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
+    ttq._i = ttq._i || {};
+    ttq._i[e] = [];
+    ttq._i[e]._u = i;
+    ttq._t = ttq._t || {};
+    ttq._t[e] = +new Date();
+    ttq._o = ttq._o || {};
+    ttq._o[e] = n || {};
+    var o = document.createElement("script");
+    o.type = "text/javascript";
+    o.async = true;
+    o.src = i + "?sdkid=" + e + "&lib=" + t;
+    var a = document.getElementsByTagName("script")[0];
+    a.parentNode.insertBefore(o, a);
+  };
+
+  ttq.load('D63MOJRC77U6OVTJL6V0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prostanore — Solusi Prostat Alami</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     ADCOMBO INTEGRATION — REPLACE YOUR_PIXEL_ID & YOUR_OFFER_ID
+     ============================================================ -->
+<script>
+  var ADCOMBO_PIXEL_ID = 'YOUR_PIXEL_ID'; // <-- REPLACE THIS
+  var ADCOMBO_OFFER_ID = '93b5fe88275fed2085f381100a0259c9'; // <-- REPLACE THIS
+
+  function fireAdComboLead(data) {
+    var img = new Image();
+    img.src = 'https://adcombo.com/postback?pixel=' + ADCOMBO_PIXEL_ID
+      + '&offer_id=' + ADCOMBO_OFFER_ID
+      + '&status=lead'
+      + '&name=' + encodeURIComponent(data.name || '')
+      + '&phone=' + encodeURIComponent(data.phone || '')
+      + '&ts=' + Date.now();
+    document.body.appendChild(img);
+    if (typeof adcPixel === 'function') {
+      adcPixel('lead', { pixel: ADCOMBO_PIXEL_ID });
+    }
+  }
+</script>
+<!-- ============================================================ -->
+
+<style>
+  :root {
+    --bg-deep: #080f1a;
+    --bg-card: #0d1b2a;
+    --green: #1db954;
+    --green-dark: #0f7a32;
+    --green-glow: rgba(29,185,84,0.25);
+    --gold: #f5a623;
+    --white: #f0f4f8;
+    --muted: #6b8399;
+    --border: rgba(29,185,84,0.18);
+    --font-main: 'Noto Sans', sans-serif;
+    --font-serif: 'Noto Serif', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--bg-deep);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(13,90,50,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 90%, rgba(8,40,80,0.25) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+    animation: bgPulse 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes bgPulse { 0%{opacity:0.7} 100%{opacity:1} }
+
+  .page-wrap {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px 40px;
+  }
+
+  .top-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(29,185,84,0.1);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .top-badge span {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    display: inline-block;
+    animation: blink 1.5s ease infinite;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  @keyframes fadeDown { from{opacity:0;transform:translateY(-16px)} to{opacity:1;transform:none} }
+  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+  /* ═══ STAGE 1 — QUIZ ═══ */
+  #stage-quiz {
+    width: 100%;
+    max-width: 540px;
+    animation: fadeIn 0.5s ease both;
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  #stage-quiz.exit-left { opacity: 0; transform: translateX(-100vw); }
+
+  .quiz-headline { text-align: center; margin-bottom: 28px; }
+
+  .quiz-headline h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(19px, 5vw, 27px);
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .quiz-headline h1 em { font-style: normal; color: var(--green); }
+
+  .quiz-sub {
+    font-size: 14px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .quiz-sub::before, .quiz-sub::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 60px;
+  }
+
+  .progress-wrap { margin-bottom: 24px; }
+
+  .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .prog-current { color: var(--green); font-weight: 700; }
+
+  .progress-bar-track {
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    height: 8px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--green-dark), var(--green));
+    border-radius: 999px;
+    transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: 0 0 12px var(--green-glow);
+  }
+
+  .question-viewport {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .question-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 24px 24px;
+    width: 100%;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  }
+
+  .q-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .q-number::after { content:''; flex:1; height:1px; background:var(--border); }
+
+  .q-icon {
+    font-size: 36px;
+    margin-bottom: 14px;
+    display: block;
+    filter: drop-shadow(0 0 12px rgba(29,185,84,0.3));
+  }
+
+  .q-text {
+    font-size: clamp(17px, 4.5vw, 22px);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--white);
+    margin-bottom: 28px;
+  }
+
+  .q-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .btn-yes {
+    background: linear-gradient(135deg, var(--green-dark), var(--green));
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 12px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(29,185,84,0.35);
+    transition: transform 0.15s;
+  }
+
+  .btn-yes:active { transform: scale(0.96); }
+
+  .btn-no {
+    background: rgba(255,255,255,0.04);
+    color: var(--muted);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 16px 12px;
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s;
+  }
+
+  .btn-no:active { transform: scale(0.96); }
+
+  .no-tooltip {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a2a1a;
+    border: 1px solid var(--green);
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 13px;
+    color: var(--green);
+    z-index: 999;
+    white-space: nowrap;
+    animation: tooltipShow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+
+  @keyframes tooltipShow {
+    from{opacity:0;transform:translateX(-50%) translateY(10px)}
+    to{opacity:1;transform:translateX(-50%) translateY(0)}
+  }
+
+  /* ═══ STAGE 2 — VSL ═══ */
+  #stage-vsl {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  #stage-vsl.visible { opacity: 1; transform: none; }
+
+  .vsl-headline { text-align: center; margin-bottom: 22px; }
+
+  .vsl-headline h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 5.5vw, 30px);
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+
+  .vsl-headline h2 em { font-style: normal; color: var(--green); }
+
+  .vsl-sub { font-size: 15px; color: var(--green); font-weight: 600; line-height: 1.5; }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid rgba(29,185,84,0.4);
+    box-shadow: 0 0 40px rgba(29,185,84,0.2), 0 8px 40px rgba(0,0,0,0.5);
+    margin-bottom: 24px;
+    background: #000;
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+  }
+
+  .vsl-warning {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245,166,35,0.1);
+    border: 1px solid rgba(245,166,35,0.25);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .btn-discover {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--green-dark) 0%, #15a040 100%);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    padding: 18px 24px;
+    font-family: var(--font-main);
+    font-size: 17px;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 6px 30px rgba(29,185,84,0.4);
+    animation: pulseGreen 2s ease infinite;
+    transition: transform 0.15s;
+  }
+
+  .btn-discover:active { transform: scale(0.97); }
+
+  @keyframes pulseGreen {
+    0%,100% { box-shadow: 0 6px 30px rgba(29,185,84,0.4); }
+    50% { box-shadow: 0 6px 50px rgba(29,185,84,0.7); }
+  }
+
+  /* ═══ STAGE 3 — PRODUCT + FORM ═══ */
+  #stage-product {
+    display: none;
+    width: 100%;
+    max-width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  #stage-product.visible { opacity: 1; transform: none; }
+
+  .product-img-wrap { text-align: center; margin-bottom: 22px; }
+
+  #product-img {
+    max-width: 280px;
+    width: 80%;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 30px rgba(29,185,84,0.15);
+    border: 2px solid var(--border);
+  }
+
+  .product-placeholder {
+    max-width: 280px;
+    width: 80%;
+    height: 200px;
+    background: var(--bg-card);
+    border: 2px dashed var(--border);
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .product-name {
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 8vw, 40px);
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .product-tagline {
+    text-align: center;
+    font-size: 13px;
+    color: var(--green);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .price-tag { text-align: center; margin-bottom: 18px; }
+
+  .price-tag .price {
+    font-size: clamp(26px, 7vw, 36px);
+    font-weight: 900;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(245,166,35,0.35);
+  }
+
+  .price-tag .price-label { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  .product-desc {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #a8c0d0;
+    margin-bottom: 18px;
+  }
+
+  .product-benefits { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+
+  .benefit-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--white); }
+
+  .benefit-item span {
+    width: 22px; height: 22px;
+    background: rgba(29,185,84,0.15);
+    border: 1px solid var(--green);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; flex-shrink: 0;
+    color: var(--green); font-weight: 700;
+  }
+
+  .form-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  }
+
+  .form-title { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: var(--white); }
+
+  .form-subtitle { font-size: 13px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+
+  .form-group { margin-bottom: 14px; }
+
+  .form-group label {
+    display: block;
+    font-size: 12px; font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .form-group input {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1.5px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .form-group input::placeholder { color: #3a5060; }
+
+  .form-group input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(29,185,84,0.12);
+  }
+
+  .form-group input.error {
+    border-color: #e05555;
+    box-shadow: 0 0 0 3px rgba(224,85,85,0.12);
+    animation: shake 0.35s ease;
+  }
+
+  @keyframes shake {
+    0%,100%{transform:translateX(0)}
+    20%{transform:translateX(-6px)}
+    60%{transform:translateX(6px)}
+    80%{transform:translateX(-4px)}
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #0d8c2e 0%, #22c55e 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 16px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 6px;
+    box-shadow: 0 6px 30px rgba(29,185,84,0.4);
+    transition: transform 0.15s;
+    animation: pulseGreen 2s ease infinite;
+    line-height: 1.4;
+  }
+
+  .btn-submit:active { transform: scale(0.97); }
+
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 14px 0 0;
+  }
+
+  .trust-badge { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); font-weight: 600; }
+
+  .site-footer {
+    text-align: center;
+    padding: 30px 16px 20px;
+    font-size: 11px;
+    color: #2a3f52;
+    position: relative;
+    z-index: 1;
+  }
+
+  .loading-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(8,15,26,0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .loading-overlay.show { display: flex; }
+
+  .spinner {
+    width: 44px; height: 44px;
+    border: 3px solid rgba(29,185,84,0.15);
+    border-top-color: var(--green);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .loading-text { font-size: 14px; color: var(--green); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <div class="top-badge">
+    <span></span> Tes Kesehatan Prostat Gratis
+  </div>
+
+  <!-- ═══════════════ STAGE 1: QUIZ ═══════════════ -->
+  <div id="stage-quiz">
+    <div class="quiz-headline">
+      <h1>Jawab 4 Pertanyaan Ini Untuk Mengetahui Apakah Anda <em>Berisiko Masalah Prostat</em></h1>
+      <div class="quiz-sub">Hanya butuh 30 detik — jawab jujur</div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-labels">
+        <span>Pertanyaan <span class="prog-current" id="prog-num">1</span> dari 4</span>
+        <span id="prog-pct">25%</span>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progress-fill" style="width:25%"></div>
+      </div>
+    </div>
+
+    <div class="question-viewport" id="question-viewport">
+
+      <div class="question-card" id="q1">
+        <div class="q-number">Pertanyaan 01</div>
+        <span class="q-icon">🌙</span>
+        <div class="q-text">Apakah Anda sering terbangun malam hari untuk buang air kecil?</div>
+        <div class="q-buttons">
+          <button class="btn-yes" onclick="nextQuestion(1, true)">✅ Ya</button>
+          <button class="btn-no" onclick="nextQuestion(1, false)">Tidak</button>
+        </div>
+      </div>
+
+      <div class="question-card" id="q2" style="display:none;">
+        <div class="q-number">Pertanyaan 02</div>
+        <span class="q-icon">💧</span>
+        <div class="q-text">Apakah Anda merasa aliran urin Anda lemah atau tidak tuntas?</div>
+        <div class="q-buttons">
+          <button class="btn-yes" onclick="nextQuestion(2, true)">✅ Ya</button>
+          <button class="btn-no" onclick="nextQuestion(2, false)">Tidak</button>
+        </div>
+      </div>
+
+      <div class="question-card" id="q3" style="display:none;">
+        <div class="q-number">Pertanyaan 03</div>
+        <span class="q-icon">⚡</span>
+        <div class="q-text">Apakah Anda merasakan tekanan atau ketidaknyamanan di area panggul?</div>
+        <div class="q-buttons">
+          <button class="btn-yes" onclick="nextQuestion(3, true)">✅ Ya</button>
+          <button class="btn-no" onclick="nextQuestion(3, false)">Tidak</button>
+        </div>
+      </div>
+
+      <div class="question-card" id="q4" style="display:none;">
+        <div class="q-number">Pertanyaan 04</div>
+        <span class="q-icon">🛡️</span>
+        <div class="q-text">Apakah Anda berusia di atas 40 tahun dan peduli dengan kesehatan prostat Anda?</div>
+        <div class="q-buttons">
+          <button class="btn-yes" onclick="nextQuestion(4, true)">✅ Ya</button>
+          <button class="btn-no" onclick="nextQuestion(4, false)">Tidak</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="analyzing" style="display:none;margin-top:24px;text-align:center;">
+      <div class="progress-bar-track" style="margin-bottom:10px;">
+        <div class="progress-bar-fill" id="analyze-fill" style="width:0%;transition:width 1.5s ease;"></div>
+      </div>
+      <div style="font-size:13px;color:var(--green);font-weight:600;">🔬 Menganalisis jawaban Anda...</div>
+    </div>
+
+  </div><!-- #stage-quiz -->
+
+
+  <!-- ═══════════════ STAGE 2: VSL ═══════════════ -->
+  <div id="stage-vsl">
+    <div class="vsl-headline">
+      <h2>Berdasarkan Jawaban Anda — <em>Ini Adalah Solusi Terbaik</em> Untuk Anda</h2>
+      <div class="vsl-sub">Tonton video penting ini sampai selesai — banyak pria Indonesia sudah merasakan manfaatnya 👇</div>
+    </div>
+
+    <div class="video-wrapper">
+      <iframe
+        id="vsl-iframe"
+        src="https://www.youtube.com/embed/JRN2oEw_iso?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="vsl-warning">
+      ⚠️ <span>Tonton video ini sampai selesai — informasi penting ada di bagian akhir</span>
+    </div>
+
+    <button class="btn-discover" onclick="showProduct()">
+      🔍 Temukan Cara Mendapatkan Produk Ini
+    </button>
+  </div><!-- #stage-vsl -->
+
+
+  <!-- ═══════════════ STAGE 3: PRODUCT + FORM ═══════════════ -->
+  <div id="stage-product">
+
+    <div class="product-img-wrap">
+      <img id="product-img" src="product.png" alt="Prostanore"
+        onerror="this.style.display='none';document.getElementById('product-ph').style.display='inline-flex';">
+      <div class="product-placeholder" id="product-ph" style="display:none;">
+        <span style="font-size:40px">💊</span>
+        <span>Tambahkan product.png</span>
+      </div>
+    </div>
+
+    <div class="product-name">PROSTANORE</div>
+    <div class="product-tagline">Suplemen Kesehatan Prostat Alami</div>
+
+    <div class="price-tag">
+      <span class="price">Rp 390.000</span>
+      <span class="price-label">Harga per botol · Stok terbatas</span>
+    </div>
+
+    <div class="product-desc">
+      PROSTANORE adalah suplemen alami yang diformulasikan khusus untuk mendukung kesehatan prostat pria. Mengandung bahan-bahan terpilih yang telah terbukti membantu mengurangi gangguan saluran kemih dan menjaga fungsi prostat optimal.
+    </div>
+
+    <div class="product-benefits">
+      <div class="benefit-item"><span>✓</span> Mengurangi frekuensi buang air kecil malam hari</div>
+      <div class="benefit-item"><span>✓</span> Memperlancar aliran urin secara alami</div>
+      <div class="benefit-item"><span>✓</span> Mendukung kesehatan prostat jangka panjang</div>
+      <div class="benefit-item"><span>✓</span> Formula alami, aman dikonsumsi</div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-title">📋 Isi Formulir Untuk Info Lengkap</div>
+      <div class="form-subtitle">Perwakilan kami akan segera menghubungi Anda untuk memberikan informasi lengkap, penawaran terbaik, dan cara mendapatkan PROSTANORE di kota Anda.</div>
+
+      <div class="form-group">
+        <label>Nama Lengkap</label>
+        <input type="text" id="f-name" placeholder="Contoh: Budi Santoso" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label>Nomor Telepon</label>
+        <input type="tel" id="f-phone" placeholder="Contoh: 08123456789" inputmode="tel" autocomplete="tel">
+      </div>
+      <button class="btn-submit" onclick="submitForm()">
+        ✅ Ya, Saya Ingin Info Lengkap &amp; Penawaran Spesial
+      </button>
+
+      <div class="trust-badges">
+        <div class="trust-badge">🔒 Data Aman</div>
+        <div class="trust-badge">⚡ Respon Cepat</div>
+        <div class="trust-badge">✅ Produk Asli</div>
+        <div class="trust-badge">🚚 Kirim ke Seluruh Indonesia</div>
+      </div>
+    </div>
+
+  </div><!-- #stage-product -->
+
+</div><!-- .page-wrap -->
+
+<div class="site-footer">© 2025 Prostanore · Semua Hak Dilindungi</div>
+
+<div class="loading-overlay" id="loading">
+  <div class="spinner"></div>
+  <div class="loading-text">Memproses data Anda...</div>
+</div>
+
+<script>
+  var currentQ = 1;
+  var transitioning = false;
+  var progress = { 1: 25, 2: 50, 3: 75, 4: 100 };
+
+  function nextQuestion(qNum, isYes) {
+    if (transitioning) return;
+    transitioning = true;
+
+    if (!isYes) {
+      showTooltip('Jangan khawatir — tetap lanjutkan tes ini untuk hasil yang akurat 😊');
+    }
+
+    if (qNum === 4) {
+      showAnalyzing();
+      return;
+    }
+
+    var currentCard = document.getElementById('q' + qNum);
+    var nextCard = document.getElementById('q' + (qNum + 1));
+    var viewport = document.getElementById('question-viewport');
+
+    // Lock viewport height
+    viewport.style.height = currentCard.offsetHeight + 'px';
+    viewport.style.position = 'relative';
+    viewport.style.overflow = 'hidden';
+
+    // Pin current card absolutely
+    currentCard.style.position = 'absolute';
+    currentCard.style.top = '0';
+    currentCard.style.left = '0';
+    currentCard.style.width = '100%';
+
+    // Place next card off right
+    nextCard.style.display = 'block';
+    nextCard.style.position = 'absolute';
+    nextCard.style.top = '0';
+    nextCard.style.left = '0';
+    nextCard.style.width = '100%';
+    nextCard.style.transform = 'translateX(110%)';
+    nextCard.style.opacity = '1';
+
+    // Force reflow
+    nextCard.getBoundingClientRect();
+
+    // Animate slide
+    currentCard.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.4s';
+    nextCard.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1)';
+    currentCard.style.transform = 'translateX(-110%)';
+    currentCard.style.opacity = '0';
+    nextCard.style.transform = 'translateX(0)';
+
+    setTimeout(function() {
+      // Hide old card
+      currentCard.style.display = 'none';
+      currentCard.style.position = '';
+      currentCard.style.transform = '';
+      currentCard.style.opacity = '';
+      currentCard.style.transition = '';
+
+      // Reset new card to normal flow
+      nextCard.style.position = 'relative';
+      nextCard.style.transform = '';
+      nextCard.style.transition = '';
+      nextCard.style.width = '';
+
+      // Release viewport
+      viewport.style.height = '';
+      viewport.style.overflow = '';
+
+      currentQ = qNum + 1;
+      updateProgress(currentQ);
+      transitioning = false;
+    }, 460);
+  }
+
+  function updateProgress(q) {
+    var pctVal = progress[q] || 100;
+    document.getElementById('progress-fill').style.width = pctVal + '%';
+    document.getElementById('prog-num').textContent = q;
+    document.getElementById('prog-pct').textContent = pctVal + '%';
+  }
+
+  function showTooltip(msg) {
+    var existing = document.querySelector('.no-tooltip');
+    if (existing) existing.remove();
+    var tip = document.createElement('div');
+    tip.className = 'no-tooltip';
+    tip.textContent = msg;
+    document.body.appendChild(tip);
+    setTimeout(function() {
+      tip.style.opacity = '0';
+      tip.style.transition = 'opacity 0.4s';
+      setTimeout(function() { tip.remove(); }, 400);
+    }, 2200);
+  }
+
+  function showAnalyzing() {
+    var analyzing = document.getElementById('analyzing');
+    analyzing.style.display = 'block';
+    setTimeout(function() {
+      document.getElementById('analyze-fill').style.width = '100%';
+    }, 50);
+    setTimeout(function() {
+      var quiz = document.getElementById('stage-quiz');
+      quiz.classList.add('exit-left');
+      setTimeout(function() {
+        quiz.style.display = 'none';
+        showVSL();
+      }, 500);
+    }, 1800);
+  }
+
+  function showVSL() {
+    var vsl = document.getElementById('stage-vsl');
+    vsl.style.display = 'block';
+    window.scrollTo(0, 0);
+    setTimeout(function() {
+      vsl.classList.add('visible');
+      transitioning = false;
+    }, 50);
+  }
+
+  function showProduct() {
+    var vsl = document.getElementById('stage-vsl');
+    vsl.style.opacity = '0';
+    vsl.style.transform = 'translateY(-20px)';
+    var iframe = document.getElementById('vsl-iframe');
+    if (iframe) iframe.src = '';
+    setTimeout(function() {
+      vsl.style.display = 'none';
+      var prod = document.getElementById('stage-product');
+      prod.style.display = 'block';
+      window.scrollTo(0, 0);
+      setTimeout(function() { prod.classList.add('visible'); }, 50);
+    }, 500);
+  }
+
+  // ═══════════════════════════════════════════════════
+  // GOOGLE SHEETS CONFIG — paste your Web App URL below
+  var GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbw0-C76cseqspti0-6tE3llUnak-qz1TG7f6swQHKTamwzTFcIYoocAPE0n7MIfX7vFkw/exec'; // <-- REPLACE THIS
+  // ═══════════════════════════════════════════════════
+
+  function submitForm() {
+    var name  = document.getElementById('f-name');
+    var phone = document.getElementById('f-phone');
+    var valid = true;
+
+    [name, phone].forEach(function(f) {
+      f.classList.remove('error');
+      if (!f.value.trim()) { f.classList.add('error'); valid = false; }
+    });
+
+    if (!valid) {
+      showTooltip('\u26a0\ufe0f Harap isi semua kolom terlebih dahulu');
+      return;
+    }
+
+    document.getElementById('loading').classList.add('show');
+
+    var nameVal  = name.value.trim();
+    var phoneVal = phone.value.trim();
+
+    sessionStorage.setItem('prostanore_lead', JSON.stringify({ name: nameVal, phone: phoneVal }));
+
+    var formData = new FormData();
+    formData.append('name',      nameVal);
+    formData.append('phone',     phoneVal);
+    formData.append('timestamp', new Date().toISOString());
+    formData.append('page',      window.location.href);
+
+    fetch(GOOGLE_SHEET_URL, {
+      method: 'POST',
+      mode:   'no-cors',
+      body:   formData
+    })
+    .catch(function() {})
+    .finally(function() {
+      window.location.href = 'thank-you.html';
+    });
+  }
+
+  // Clear error on focus
+  document.addEventListener('DOMContentLoaded', function() {
+    ['f-name','f-phone'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.addEventListener('focus', function() { el.classList.remove('error'); });
+    });
+  });
+</script>
+
+</body>
+</html>
